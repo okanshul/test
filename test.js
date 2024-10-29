@@ -23,8 +23,7 @@ function Form_Submit(event) {
             // console.log(data.errors);
             for (const [key, value] of Object.entries(data.errors)) {
                 document.getElementById(key).classList.add('is-invalid');
-                document.getElementById(key).nextElementSibling.classList.add('invalid-feedback', 'fs-0', 'ms-3');
-                document.getElementById(key).nextElementSibling.innerHTML = value[0];
+                document.getElementById(key).parentElement.insertAdjacentHTML('beforeend', `<div class="invalid-feedback fs-0 ms-3">${value[0]}</div>`);
             }
         }
         // success message for valid data
