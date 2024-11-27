@@ -255,13 +255,23 @@ Add the following code to each view file:
 
                             <div class="form-group">
                                 <label for="task_name">Task Name</label>
-                                <input type="text" class="form-control" id="task_name" name="task_name" required>
+                                <input type="text" class="form-control @error('task_name') is-invalid @enderror" value="{{ old('task_name') }}" id="task_name" name="task_name" placeholder="Enter task name" value="{{ old('task_name') }}">
                             </div>
+                            @error('task_name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
 
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea class="form-control" id="description" name="description" required></textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="Enter description">{{ old('description') }}</textarea>
                             </div>
+                            @error('description')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
 
                             <button type="submit" class="btn btn-primary">Create</button>
                         </form>
@@ -319,13 +329,19 @@ Add the following code to each view file:
 
                             <div class="form-group">
                                 <label for="task_name">Task Name</label>
-                                <input type="text" class="form-control" id="task_name" name="task_name" value="{{ $task->task_name }}" required>
+                                <input type="text" class="form-control @error('task_name') is-invalid @enderror" id="task_name" name="task_name" value="{{ $task->task_name }}">
                             </div>
+                            @error('task_name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
 
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea class="form-control" id="description" name="description" required>{{ $task->description }}</textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{ $task->description }}</textarea>
                             </div>
+                            @error('description')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
 
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
