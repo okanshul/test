@@ -185,7 +185,7 @@ Create the following views in the `resources/views` directory:
 Add the following code to each view file:
 
 `task.blade.php`
-```php tamplate
+```blade
 @extends('layouts.app')
 
 @section('content')
@@ -239,7 +239,7 @@ Add the following code to each view file:
 @endsection
 ```
 `create.blade.php`
-```php tamplate
+```blade
 @extends('layouts.app')
 
 @section('content')
@@ -273,7 +273,7 @@ Add the following code to each view file:
 @endsection
 ```
 `show.blade.php`
-```php tamplate
+```blade
 @extends('layouts.app')
 
 @section('content')
@@ -302,7 +302,7 @@ Add the following code to each view file:
 ```
 
 `edit.blade.php`
-```php tamplate
+```blade
 @extends('layouts.app')
 
 @section('content')
@@ -337,7 +337,7 @@ Add the following code to each view file:
 @endsection
 ```
 `app.blade.php`
-```html
+```blade
 <!DOCTYPE html>
 <html lang="en">
 <head>
