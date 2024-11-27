@@ -172,7 +172,7 @@ Route::get('/task/create', [TaskController::class, 'create'])->name('create');
 Route::post('/task/store', [TaskController::class, 'store'])->name('store');
 Route::get('/task/show/{id}', [TaskController::class, 'show'])->name('show');
 Route::get('/task/edit/{id}', [TaskController::class, 'edit'])->name('edit');
-Route::post('/task/update', [TaskController::class, 'update'])->name('update');
+Route::put('/task/update', [TaskController::class, 'update'])->name('update');
 Route::delete('/task/delete', [TaskController::class, 'delete'])->name('delete');
 ```
 ## 7. Create Views
