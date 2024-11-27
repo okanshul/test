@@ -255,7 +255,7 @@ Add the following code to each view file:
 
                             <div class="form-group">
                                 <label for="task_name">Task Name</label>
-                                <input type="text" class="form-control @error('task_name') is-invalid @enderror" value="{{ old('task_name') }}" id="task_name" name="task_name" placeholder="Enter task name" value="{{ old('task_name') }}">
+                                <input type="text" class="form-control @error('task_name') is-invalid @enderror" id="task_name" name="task_name" placeholder="Enter task name" value="{{ old('task_name') }}">
                             </div>
                             @error('task_name')
                                 <div class="invalid-feedback">
